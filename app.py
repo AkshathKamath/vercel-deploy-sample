@@ -1,7 +1,6 @@
-# import os
 from flask import Flask
-# import boto3
-# from dotenv import load_dotenv
+from aws.aws_handler import aws_work
+
 
 app = Flask(__name__)
 
@@ -19,18 +18,9 @@ app = Flask(__name__)
 def func_1():
     return "hello"
 
-# @app.route('/demo', methods=['GET'])
-# def demo_func():
-#     s3_client = boto3.client(
-#         service_name = 's3',
-#         region_name = AWS_REGION,
-#         aws_access_key_id = AWS_ACCESS_KEY,
-#         aws_secret_access_key = AWS_SECRET_KEY
-#     )
-
-#     response = s3_client.upload_file(LOCAL_FILE, AWS_S3_BUCKET_NAME, S3_NAME)
-
-#     return f"Img Upload Successful with response: {response}"
+@app.route('/demo', methods=['GET'])
+def demo_func():
+    return aws_work()
 
 
 @app.errorhandler(500)
