@@ -1,11 +1,11 @@
-import os
+# import os
 from flask import Flask
-import boto3
-from dotenv import load_dotenv
+# import boto3
+# from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-load_dotenv()
+# load_dotenv()
 
 # AWS_ACCESS_KEY = os.getenv('AWS_ACCESS_KEY')
 # AWS_SECRET_KEY = os.getenv('AWS_SECRET_KEY')
